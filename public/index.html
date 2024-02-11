@@ -5,8 +5,127 @@
 <title>Home | Lecepty</title>
 <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+	<nav class="navbar fixed-top navbar-expand-lg bg-warning">
+		<div class="container-lg">
+			<a class="navbar-brand" href="#"><i class="bi bi-fire"></i> Lecepty</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Přidat </a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Recept</a></li>
+							<li><a class="dropdown-item" href="#">Kategorii</a></li>
+						</ul></li>
+				</ul>
+				<form class="d-flex" role="search">
+					<input class="form-control me-2" type="search" placeholder="Hledat" aria-label="Search">
+					<button class="btn btn-outline-dark" type="submit">
+						<i class="bi bi-search"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<main class="container-lg">
+		<div class="row">
+			<div class="col-lg-9" id="recipes">
+				<div class="row row-cols-1 row-cols-lg-2 g-4">
+					<div class="col">
+						<div class="card recipe">
+							<div class="card-header placeholder-wave p-0">
+								<span class="placeholder w-100 img-placeholder"></span>
+							</div>
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="#">Card title</a>
+								</h5>
+								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							</div>
+							<div class="card-footer">
+								<a href="#" class="card-link"><i class="bi bi-pencil"></i> Upravit</a>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card recipe">
+							<div class="card-header placeholder-wave p-0">
+								<span class="placeholder w-100 img-placeholder"></span>
+							</div>
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="#">Card title</a>
+								</h5>
+								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							</div>
+							<div class="card-footer">
+								<a href="#" class="card-link"><i class="bi bi-pencil"></i> Upravit</a>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card recipe">
+							<div class="card-header placeholder-wave p-0">
+								<span class="placeholder w-100 img-placeholder"></span>
+							</div>
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="#">Card title</a>
+								</h5>
+								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							</div>
+							<div class="card-footer">
+								<a href="#" class="card-link"><i class="bi bi-pencil"></i> Upravit</a>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card recipe">
+							<div class="card-header placeholder-wave p-0">
+								<span class="placeholder w-100 img-placeholder"></span>
+							</div>
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="#">Card title</a>
+								</h5>
+								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							</div>
+							<div class="card-footer">
+								<a href="#" class="card-link"><i class="bi bi-pencil"></i> Upravit</a>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card recipe">
+							<div class="card-header placeholder-wave p-0">
+								<span class="placeholder w-100 img-placeholder"></span>
+							</div>
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="#">Card title</a>
+								</h5>
+								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							</div>
+							<div class="card-footer">
+								<a href="#" class="card-link"><i class="bi bi-pencil"></i> Upravit</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<div class="list-group" id="categories">
+					<a href="#" class="list-group-item list-group-item-action active" aria-current="true"> The current link item </a> <a href="#" class="list-group-item list-group-item-action">A second link item</a> <a href="#" class="list-group-item list-group-item-action">A third link item</a> <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+				</div>
+			</div>
+		</div>
+	</main>
 
 	<script src="assets/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	<script src="assets/js/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
