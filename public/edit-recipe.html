@@ -40,6 +40,12 @@
 				<input class="form-control" required type="text" name="recname">
 			</div>
 
+			<select class="form-select mb-3">
+				<option selected>Vyberte kategorii*</option>
+				<option value="1">Předkrmy</option>
+				<option value="2">Polévky</option>
+			</select>
+
 			<label class="form-label">Čas přípravy*</label>
 			<div class="mb-3 input-group">
 				<input class="form-control" required type="number" name="rectime" min="1">
@@ -64,6 +70,11 @@
 			<div class="mb-3">
 				<label class="form-label">Postup*</label>
 				<textarea class="form-control" rows="5" required></textarea>
+			</div>
+
+			<div class="input-group mb-3">
+				<label class="input-group-text" for="inputGroupFile">Obrázek</label>
+				<input type="file" class="form-control" id="inputGroupFile" name="recimg">
 			</div>
 
 			<button class="btn btn-dark mt-3" type="submit">Uložit</button>
