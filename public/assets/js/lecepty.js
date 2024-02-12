@@ -66,6 +66,12 @@ db = new Dexie('LeceptyDB');
 			description
 		`
 	});
+
+	// Render categories
+	if ($('template#category')) {
+		$('#categories').html('');
+		db.recipeCategory.each(category => $('#categories').append(renderTmpl($('template#category').html(), category)));
+	}
 }
 
 function addEditCategory() {

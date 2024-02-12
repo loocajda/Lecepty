@@ -98,11 +98,17 @@
 
 			<div class="col-lg-3">
 				<div class="list-group" id="categories">
-					<a href="#" class="list-group-item list-group-item-action active" aria-current="true"> The current link item </a> <a href="#" class="list-group-item list-group-item-action">A second link item</a> <a href="#" class="list-group-item list-group-item-action">A third link item</a> <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+					<div class="list-group-item list-group-item-action placeholder-wave"><span class="placeholder col-10"></span> <span class="placeholder col-1"></span></div>
+					<div class="list-group-item list-group-item-action placeholder-wave"><span class="placeholder col-8"></span> <span class="placeholder col-3"></span></div>
+					<div class="list-group-item list-group-item-action placeholder-wave"><span class="placeholder col-12"></span></div>
+					<div class="list-group-item list-group-item-action placeholder-wave"><span class="placeholder col-5"></span> <span class="placeholder col-2"></span> <span class="placeholder col-4"></span></div>
+					<div class="list-group-item list-group-item-action placeholder-wave"><span class="placeholder col-7"></span> <span class="placeholder col-4"></span></div>
 				</div>
 			</div>
 		</div>
 	</main>
+
+	<template id="category"><a href=".?catuid={{uid}}" class="list-group-item list-group-item-action" title="{{description}}">{{name}}</a></template>
 
 	<script src="assets/js/lecepty.js"></script>
 </body>
