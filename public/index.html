@@ -19,13 +19,13 @@
 								<span class="placeholder w-100 img-placeholder"></span>
 							</div>
 							<div class="card-body">
-								<h5 class="card-title">
-									<a href="#">Card title</a>
+								<h5 class="card-title placeholder-wave">
+									<span class="placeholder col-12"></span>
 								</h5>
-								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+								<p class="card-text placeholder-wave"><span class="placeholder col-3"></span> <span class="placeholder col-5"></span> <span class="placeholder col-2"></span> <span class="placeholder col-4"></span> <span class="placeholder col-3"></span></p>
 							</div>
-							<div class="card-footer">
-								<a href="#" class="card-link"><i class="bi bi-pencil"></i> Upravit</a>
+							<div class="card-footer placeholder-wave">
+								<i class="bi bi-pencil"></i> <span class="placeholder col-6"></span>
 							</div>
 						</div>
 					</div>
@@ -35,61 +35,13 @@
 								<span class="placeholder w-100 img-placeholder"></span>
 							</div>
 							<div class="card-body">
-								<h5 class="card-title">
-									<a href="#">Card title</a>
+								<h5 class="card-title placeholder-wave">
+									<span class="placeholder col-12"></span>
 								</h5>
-								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+								<p class="card-text placeholder-wave"><span class="placeholder col-3"></span> <span class="placeholder col-5"></span> <span class="placeholder col-2"></span> <span class="placeholder col-4"></span> <span class="placeholder col-3"></span></p>
 							</div>
-							<div class="card-footer">
-								<a href="#" class="card-link"><i class="bi bi-pencil"></i> Upravit</a>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card recipe">
-							<div class="card-header placeholder-wave p-0">
-								<span class="placeholder w-100 img-placeholder"></span>
-							</div>
-							<div class="card-body">
-								<h5 class="card-title">
-									<a href="#">Card title</a>
-								</h5>
-								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							</div>
-							<div class="card-footer">
-								<a href="#" class="card-link"><i class="bi bi-pencil"></i> Upravit</a>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card recipe">
-							<div class="card-header placeholder-wave p-0">
-								<span class="placeholder w-100 img-placeholder"></span>
-							</div>
-							<div class="card-body">
-								<h5 class="card-title">
-									<a href="#">Card title</a>
-								</h5>
-								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							</div>
-							<div class="card-footer">
-								<a href="#" class="card-link"><i class="bi bi-pencil"></i> Upravit</a>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card recipe">
-							<div class="card-header placeholder-wave p-0">
-								<span class="placeholder w-100 img-placeholder"></span>
-							</div>
-							<div class="card-body">
-								<h5 class="card-title">
-									<a href="#">Card title</a>
-								</h5>
-								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							</div>
-							<div class="card-footer">
-								<a href="#" class="card-link"><i class="bi bi-pencil"></i> Upravit</a>
+							<div class="card-footer placeholder-wave">
+								<i class="bi bi-pencil"></i> <span class="placeholder col-6"></span>
 							</div>
 						</div>
 					</div>
@@ -98,17 +50,63 @@
 
 			<div class="col-lg-3">
 				<div class="list-group" id="categories">
-					<div class="list-group-item list-group-item-action placeholder-wave"><span class="placeholder col-10"></span> <span class="placeholder col-1"></span></div>
-					<div class="list-group-item list-group-item-action placeholder-wave"><span class="placeholder col-8"></span> <span class="placeholder col-3"></span></div>
-					<div class="list-group-item list-group-item-action placeholder-wave"><span class="placeholder col-12"></span></div>
-					<div class="list-group-item list-group-item-action placeholder-wave"><span class="placeholder col-5"></span> <span class="placeholder col-2"></span> <span class="placeholder col-4"></span></div>
-					<div class="list-group-item list-group-item-action placeholder-wave"><span class="placeholder col-7"></span> <span class="placeholder col-4"></span></div>
+					<div class="list-group-item list-group-item-action placeholder-wave">
+						<span class="placeholder col-10"></span> <span class="placeholder col-1"></span>
+					</div>
+					<div class="list-group-item list-group-item-action placeholder-wave">
+						<span class="placeholder col-8"></span> <span class="placeholder col-3"></span>
+					</div>
+					<div class="list-group-item list-group-item-action placeholder-wave">
+						<span class="placeholder col-12"></span>
+					</div>
+					<div class="list-group-item list-group-item-action placeholder-wave">
+						<span class="placeholder col-5"></span> <span class="placeholder col-2"></span> <span class="placeholder col-4"></span>
+					</div>
+					<div class="list-group-item list-group-item-action placeholder-wave">
+						<span class="placeholder col-7"></span> <span class="placeholder col-4"></span>
+					</div>
 				</div>
 			</div>
 		</div>
 	</main>
 
 	<template id="category"><a href=".?catuid={{uid}}" class="list-group-item list-group-item-action" title="{{description}}">{{name}}</a></template>
+	<template id="recipe">
+		<div class="col">
+			<div class="card recipe">
+				<div class="card-header p-0">
+					<img class="img-fluid" src="{{image}}" alt="{{name}}">
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">
+						<a href="recipe-detail.html?uid={{uid}}">{{name}}</a>
+					</h5>
+					<p class="card-text">{{ingredients}}</p>
+				</div>
+				<div class="card-footer">
+					<a href="edit-recipe.html?uid={{uid}}" class="card-link"><i class="bi bi-pencil"></i> Upravit</a>
+				</div>
+			</div>
+		</div>
+	</template>
+	<template id="recipe_placeholder">
+		<div class="col">
+			<div class="card recipe">
+				<div class="card-header placeholder-wave p-0">
+					<span class="placeholder w-100 img-placeholder"></span>
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">
+						<a href="recipe-detail.html?uid={{uid}}">{{name}}</a>
+					</h5>
+					<p class="card-text">{{ingredients}}</p>
+				</div>
+				<div class="card-footer">
+					<a href="edit-recipe.html?uid={{uid}}" class="card-link"><i class="bi bi-pencil"></i> Upravit</a>
+				</div>
+			</div>
+		</div>
+	</template>
 
 	<script src="assets/js/lecepty.js"></script>
 </body>
