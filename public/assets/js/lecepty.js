@@ -68,24 +68,24 @@ db = new Dexie('LeceptyDB');
 	});
 
 	// Render recipes
-	if ($('template#recipe')) {
+	if ($('template#recipe').length) {
 		$('#recipes>.row').html('');
 		db.recipe.each(recipe => $('#recipes>.row').append(renderTmpl(recipe.image ? $('template#recipe').html() : $('template#recipe_placeholder').html(), recipe)));
 	}
 
 	// Render categories
-	if ($('template#category')) {
+	if ($('template#category').length) {
 		$('#categories').html('');
 		db.recipeCategory.each(category => $('#categories').append(renderTmpl($('template#category').html(), category)));
 	}
 
 	// Render category options
-	if ($('template#category_option')) {
+	if ($('template#category_option').length) {
 		db.recipeCategory.each(category => $('select#category_select').append(renderTmpl($('template#category_option').html(), category)));
 	}
 
 	// Render recipe detail
-	if ($('template#recipe_detail')) {
+	if ($('template#recipe_detail').length) {
 		let urlParams = new URLSearchParams(window.location.search);
 		if (urlParams.has('uid')) {
 			db.open().then(() => {
