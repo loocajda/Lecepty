@@ -13,6 +13,13 @@ const scripts = [
 
 var db;
 
+// Simple templating engine
+var renderTmpl = (template, data) => {
+	return template.replace(/{{(.*?)}}/g, (match) => {
+		return data[match.split(/{{|}}/).filter(Boolean)[0].trim()] ?? "";
+	});
+}
+
 // Exec loading some JS scripts when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
 let scriptsToGo = scripts.length;
