@@ -26,9 +26,12 @@ let scriptsToGo = scripts.length;
 });
 
 function main() {
-	// TODO: Add error handling!
+	// Load main menu panel
 	$.ajax({
 		url: "assets/snippets/mainnavbar.html",
+		error: (jqXHR, textStatus, errorThrown) => {
+			alert("Chyba při nahrávání hlavního menu");
+		}
 	}).done((result) => {
 		$("header").html(result);
 	});
