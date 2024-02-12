@@ -83,6 +83,20 @@ db = new Dexie('LeceptyDB');
 	if ($('template#category_option')) {
 		db.recipeCategory.each(category => $('select#category_select').append(renderTmpl($('template#category_option').html(), category)));
 	}
+
+	// Render recipe detail
+	if ($('template#recipe_detail')) {
+		let urlParams = new URLSearchParams(window.location.search);
+		if (urlParams.has('uid')) {
+			db.open().then(() => {
+				return db.recipe.where('uid').equals(Number(urlParams.get('uid'))).toArray();
+			}).then((recipe) => {
+				$('main').html(recipe[0].image ? renderTmpl($('template#recipe_detail').html(), recipe[0]) : renderTmpl($('template#recipe_detail_placeholder').html(), recipe[0]));
+			});
+		} else {
+			window.location.href='.';
+		}
+	}
 }
 
 function addEditCategory() {
