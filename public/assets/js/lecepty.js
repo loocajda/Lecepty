@@ -36,6 +36,7 @@ let scriptsToGo = scripts.length;
 });
 
 function main() {
+let urlParams = new URLSearchParams(window.location.search);
 db = new Dexie('LeceptyDB');
 
 	// Load main menu panel
@@ -67,14 +68,22 @@ db = new Dexie('LeceptyDB');
 		`
 	});
 
-	// Render recipes
+	// Render main page
 	if ($('template#recipe').length) {
+		// Render recipes
 		$('#recipes>.row').html('');
-		db.recipe.each(recipe => $('#recipes>.row').append(renderTmpl(recipe.image ? $('template#recipe').html() : $('template#recipe_placeholder').html(), recipe)));
-	}
 
-	// Render categories
-	if ($('template#category').length) {
+		db.open().then(() => {
+			if (urlParams.has('catuid')) {
+				return db.recipe.where('category_uid').equals(urlParams.get('catuid'));
+			} else {
+				return db.recipe;
+			}
+		}).then((recipes) => {
+			recipes.each(recipe => $('#recipes>.row').append(renderTmpl(recipe.image ? $('template#recipe').html() : $('template#recipe_placeholder').html(), recipe)));
+		});
+
+		// Render categories
 		$('#categories').html('');
 		db.recipeCategory.each(category => $('#categories').append(renderTmpl($('template#category').html(), category)));
 	}
@@ -86,7 +95,6 @@ db = new Dexie('LeceptyDB');
 
 	// Render recipe detail
 	if ($('template#recipe_detail').length) {
-		let urlParams = new URLSearchParams(window.location.search);
 		if (urlParams.has('uid')) {
 			db.open().then(() => {
 				return db.recipe.where('uid').equals(Number(urlParams.get('uid'))).toArray();
