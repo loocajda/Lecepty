@@ -10,6 +10,9 @@ const scripts = [
 	"assets/js/dexie-import-export.js"
 ];
 
+
+var db;
+
 // Exec loading some JS scripts when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
 let scriptsToGo = scripts.length;
@@ -26,6 +29,8 @@ let scriptsToGo = scripts.length;
 });
 
 function main() {
+db = new Dexie('LeceptyDB');
+
 	// Load main menu panel
 	$.ajax({
 		url: "assets/snippets/mainnavbar.html",
@@ -34,5 +39,24 @@ function main() {
 		}
 	}).done((result) => {
 		$("header").html(result);
+	});
+
+	db.version(1).stores({
+		recipe: `
+			++uid,
+			name,
+			preparation_time,
+			difficulty,
+			portions,
+			ingredients,
+			process,
+			image,
+			category_uid
+		`,
+		recipeCategory: `
+			++uid,
+			name,
+			description
+		`
 	});
 }
