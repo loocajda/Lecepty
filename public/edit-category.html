@@ -10,7 +10,7 @@
 <body>
 	<header></header>
 	<main class="container-lg">
-		<form>
+		<form onsubmit="return false">
 			<input type="hidden" name="catuid">
 			<div class="mb-3">
 				<label class="form-label">Název kategorie*</label>
@@ -18,9 +18,9 @@
 			</div>
 			<div class="mb-3">
 				<label class="form-label">Popis kategorie</label>
-				<textarea class="form-control" rows="5"></textarea>
+				<textarea name="catdescription" class="form-control" rows="5"></textarea>
 			</div>
-			<button class="btn btn-dark mt-3" type="submit">Uložit</button>
+			<button class="btn btn-dark mt-3" type="button" onclick="addEditCategory()">Uložit</button>
 		</form>
 	</main>
 

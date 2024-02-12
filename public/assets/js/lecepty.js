@@ -60,3 +60,12 @@ db = new Dexie('LeceptyDB');
 		`
 	});
 }
+
+function addEditCategory() {
+	db.recipeCategory.add({
+		name: $('form [name="catname"]').val(),
+		description: $('form [name="catdescription"]').val()
+	});
+	db.recipeCategory.toArray();
+	window.location.href='.';
+}
