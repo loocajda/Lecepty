@@ -84,7 +84,6 @@ function addEditCategory() {
 		name: $('form [name="catname"]').val(),
 		description: $('form [name="catdescription"]').val()
 	});
-	db.recipeCategory.toArray();
 	window.location.href='.';
 }
 
