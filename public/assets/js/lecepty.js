@@ -96,8 +96,19 @@ function addEditRecipe() {
 		portions: $('form [name="recportion"]').val(),
 		ingredients: $('form [name="recingredients"]').val(),
 		process: $('form [name="recprocess"]').val(),
-		//image: ,
+		image: $('#img-thumb img').prop('src'),
 		category_uid: $('form [name="catuid"]').val()
 	});
 	window.location.href='.';
+}
+
+function loadImage() {
+	let fileR = new FileReader();
+	fileR.onload = (e) => {
+		let imgEl = document.createElement("img");
+		imgEl.setAttribute("class", "img-fluid");
+		imgEl.setAttribute("src", e.target.result);
+		$('#img-thumb').html(imgEl);
+	};
+	fileR.readAsDataURL($('form [name="recimg"]').prop('files')[0]);
 }

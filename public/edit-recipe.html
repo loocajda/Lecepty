@@ -46,16 +46,25 @@
 				<textarea class="form-control" rows="5" required name="recprocess"></textarea>
 			</div>
 
-			<div class="input-group mb-3">
-				<label class="input-group-text" for="inputGroupFile">Obrázek</label>
-				<input type="file" class="form-control" id="inputGroupFile" name="recimg">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="input-group mb-3">
+						<label class="input-group-text" for="inputGroupFile">Obrázek</label>
+						<input type="file" class="form-control" id="inputGroupFile" name="recimg" onchange="loadImage()">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div id="img-thumb"></div>
+				</div>
 			</div>
 
 			<button class="btn btn-dark mt-3" type="button" onclick="addEditRecipe()">Uložit</button>
 		</form>
 	</main>
 
-	<template id="category_option"><option value="{{uid}}">{{name}}</option></template>
+	<template id="category_option">
+		<option value="{{uid}}">{{name}}</option>
+	</template>
 
 	<script src="assets/js/lecepty.js"></script>
 </body>
