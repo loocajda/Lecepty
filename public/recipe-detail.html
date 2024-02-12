@@ -36,8 +36,64 @@
 				</p>
 			</div>
 		</div>
-
 	</main>
+
+	<template id="recipe_detail">
+		<h1>{{name}}</h1>
+		<span class="badge text-bg-primary mb-4 fs-6">{{cat_name}}</span>
+		<div class="row">
+			<div class="col-lg-3 fs-5">
+				<div class="card-header placeholder-wave p-0 mb-3">
+					<img class="img-fluid" src="{{image}}" alt="{{name}}">
+				</div>
+				<p>
+					Čas přípravy: <span>{{preparation_time}}</span> min
+				</p>
+				<p>
+					Obtížnost: <span>{{difficulty}}</span>
+				</p>
+				<p>
+					Počet porcí: <span>{{portions}}</span>
+				</p>
+			</div>
+			<div class="col-lg-9 fs-5">
+				<p>
+					Suroviny: <span>{{ingredients}}</span>
+				</p>
+				<p>
+					Postup: <span>{{process}}</span>
+				</p>
+			</div>
+		</div>
+	</template>
+	<template id="recipe_detail_placeholder">
+		<h1>{{name}}</h1>
+		<span class="badge text-bg-primary mb-4 fs-6">{{cat_name}}</span>
+		<div class="row">
+			<div class="col-lg-3 fs-5">
+				<div class="card-header placeholder-wave p-0 mb-3">
+					<span class="placeholder w-100 img-placeholder"></span>
+				</div>
+				<p>
+					Čas přípravy: <span>{{preparation_time}}</span> min
+				</p>
+				<p>
+					Obtížnost: <span>{{difficulty}}</span>
+				</p>
+				<p>
+					Počet porcí: <span>{{portions}}</span>
+				</p>
+			</div>
+			<div class="col-lg-9 fs-5">
+				<p>
+					Suroviny: <span>{{ingredients}}</span>
+				</p>
+				<p>
+					Postup: <span>{{process}}</span>
+				</p>
+			</div>
+		</div>
+	</template>
 
 	<script src="assets/js/lecepty.js"></script>
 </body>
