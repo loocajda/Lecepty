@@ -10,43 +10,40 @@
 <body>
 	<header></header>
 	<main class="container-lg">
-		<form>
+		<form onsubmit="return false">
 			<input type="hidden" name="recuid">
 			<div class="mb-3">
 				<label class="form-label">Název receptu*</label>
 				<input class="form-control" required type="text" name="recname">
 			</div>
 
-			<select class="form-select mb-3" required>
-				<option selected>Vyberte kategorii*</option>
-				<option value="1">Předkrmy</option>
-				<option value="2">Polévky</option>
-			</select>
+			<label class="form-label">Vyberte kategorii*</label>
+			<select id="category_select" name="catuid" class="form-select mb-3" required></select>
 
 			<label class="form-label">Čas přípravy*</label>
 			<div class="mb-3 input-group">
-				<input class="form-control" required type="number" name="rectime" min="1">
+				<input class="form-control" required type="number" name="rectime" min="1" value="1">
 				<span class="input-group-text">min</span>
 			</div>
 
 			<label for="customRange2" class="form-label">
 				Obtížnost <span class="fs-6 badge text-bg-primary" id="difVal">1</span>
 			</label>
-			<input type="range" class="form-range" min="1" max="5" value="1" name="recdificulty" onchange="$('#difVal').text(this.value)">
+			<input type="range" class="form-range" min="1" max="5" value="1" name="recdifficulty" onchange="$('#difVal').text(this.value)">
 
 			<div class="mb-3">
 				<label class="form-label">Počet porcí*</label>
-				<input class="form-control" required type="number" name="recportion" min="1">
+				<input class="form-control" required type="number" name="recportion" min="1" value="1">
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label">Suroviny*</label>
-				<textarea class="form-control" rows="3" required></textarea>
+				<textarea class="form-control" rows="3" required name="recingredients"></textarea>
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label">Postup*</label>
-				<textarea class="form-control" rows="5" required></textarea>
+				<textarea class="form-control" rows="5" required name="recprocess"></textarea>
 			</div>
 
 			<div class="input-group mb-3">
@@ -54,9 +51,11 @@
 				<input type="file" class="form-control" id="inputGroupFile" name="recimg">
 			</div>
 
-			<button class="btn btn-dark mt-3" type="submit">Uložit</button>
+			<button class="btn btn-dark mt-3" type="button" onclick="addEditRecipe()">Uložit</button>
 		</form>
 	</main>
+
+	<template id="category_option"><option value="{{uid}}">{{name}}</option></template>
 
 	<script src="assets/js/lecepty.js"></script>
 </body>

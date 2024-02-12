@@ -72,6 +72,11 @@ db = new Dexie('LeceptyDB');
 		$('#categories').html('');
 		db.recipeCategory.each(category => $('#categories').append(renderTmpl($('template#category').html(), category)));
 	}
+
+	// Render category options
+	if ($('template#category_option')) {
+		db.recipeCategory.each(category => $('select#category_select').append(renderTmpl($('template#category_option').html(), category)));
+	}
 }
 
 function addEditCategory() {
@@ -80,5 +85,19 @@ function addEditCategory() {
 		description: $('form [name="catdescription"]').val()
 	});
 	db.recipeCategory.toArray();
+	window.location.href='.';
+}
+
+function addEditRecipe() {
+	db.recipe.add({
+		name: $('form [name="recname"]').val(),
+		preparation_time: $('form [name="rectime"]').val(),
+		difficulty: $('form [name="recdifficulty"]').val(),
+		portions: $('form [name="recportion"]').val(),
+		ingredients: $('form [name="recingredients"]').val(),
+		process: $('form [name="recprocess"]').val(),
+		//image: ,
+		category_uid: $('form [name="catuid"]').val()
+	});
 	window.location.href='.';
 }
