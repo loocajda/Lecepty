@@ -86,25 +86,35 @@ db = new Dexie('LeceptyDB');
 }
 
 function addEditCategory() {
-	db.recipeCategory.add({
-		name: $('form [name="catname"]').val(),
-		description: $('form [name="catdescription"]').val()
+	db.transaction("rw", db.recipeCategory, () => {
+		db.recipeCategory.add({
+			name: $('form [name="catname"]').val(),
+			description: $('form [name="catdescription"]').val()
+		});
+	}).then(() => {
+		window.location.href='.';
+	}).catch((error) => {
+		console.log(error);
 	});
-	window.location.href='.';
 }
 
 function addEditRecipe() {
-	db.recipe.add({
-		name: $('form [name="recname"]').val(),
-		preparation_time: $('form [name="rectime"]').val(),
-		difficulty: $('form [name="recdifficulty"]').val(),
-		portions: $('form [name="recportion"]').val(),
-		ingredients: $('form [name="recingredients"]').val(),
-		process: $('form [name="recprocess"]').val(),
-		image: $('#img-thumb img').prop('src'),
-		category_uid: $('form [name="catuid"]').val()
+	db.transaction("rw", db.recipe, () => {
+		db.recipe.add({
+			name: $('form [name="recname"]').val(),
+			preparation_time: $('form [name="rectime"]').val(),
+			difficulty: $('form [name="recdifficulty"]').val(),
+			portions: $('form [name="recportion"]').val(),
+			ingredients: $('form [name="recingredients"]').val(),
+			process: $('form [name="recprocess"]').val(),
+			image: $('#img-thumb img').prop('src'),
+			category_uid: $('form [name="catuid"]').val()
+		});
+	}).then(() => {
+		window.location.href='.';
+	}).catch((error) => {
+		console.log(error);
 	});
-	window.location.href='.';
 }
 
 function loadImage() {
