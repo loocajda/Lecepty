@@ -71,7 +71,7 @@ Recipe
 ### 2.2.
 
 Frontend
-- HTML5, CSS, JavaScript, Bootstrap 5, Dexie.js, dexie-export-import modul, jQuery
+- HTML5, CSS, JavaScript, [Bootstrap 5](https://getbootstrap.com), [Dexie.js](https://dexie.org), [dexie-export-import modul](https://dexie.org/docs/ExportImport/dexie-export-import), [jQuery](https://jquery.com)
 
 Databáze
 - IndexedDB úložiště v prohlížeči přes knihovnu Dexie.js
