@@ -1,7 +1,9 @@
-1. Funkční specifikace
+# Aplikace Lecepty
+
+## 1. Funkční specifikace
 
 
-1.1. datový konceptuální model (např. ER diagram či textový popis)
+### 1.1. datový konceptuální model (např. ER diagram či textový popis)
 
 +------------------+ +---------------+
 | Recipe           | | RecipeCategory|
@@ -18,12 +20,12 @@
 +------------------+
 
 
-1.2. charakteristika funkčností aplikace
+### 1.2. charakteristika funkčností aplikace
 
 Aplikace Lecepty je webová aplikace pro správu receptů. Umožňuje uživatelům vytvářet kategorie receptů, do kterých mohou vkládat recepty.
 
 
-1.3. specifikace uživatelských rolí a oprávnění
+### 1.3. specifikace uživatelských rolí a oprávnění
 
 Neregistrovaný uživatel
 - může vkládat recepty
@@ -31,7 +33,7 @@ Neregistrovaný uživatel
 - může si prohlížet recepty
 
 
-1.4. uživatelské grafické rozhraní a jeho funkčnosti
+### 1.4. uživatelské grafické rozhraní a jeho funkčnosti
 
 > Úvodní stránka
 Úvodní stránka aplikace bude zobrazovat seznam nejnovějších receptů. Uživatelé mohou také vyhledávat recepty podle kategorie.
@@ -46,10 +48,10 @@ Stránka s formulářem, který bude umožňovat uživatelům vytvářet nové r
 Uživatelé mohou prostřednictvím formuláře na stránce vytvářet nové kategorie.
 
 
-2. Technická specifikace
+## 2. Technická specifikace
 
 
-2.1. datový logický model
+### 2.1. datový logický model
 
 RecipeCategory
     uid: typ Number, autoincrement
@@ -68,7 +70,7 @@ Recipe
     category_uid: typ Number
 
 
-2.2.
+### 2.2.
 
 Frontend
 - HTML5, CSS, JavaScript, Bootstrap 5, Dexie.js, dexie-export-import modul, jQuery
