@@ -5,19 +5,19 @@
 
 ### 1.1. datový konceptuální model (např. ER diagram či textový popis)
 
-+------------------+ +---------------+
-| Recipe           | | RecipeCategory|
-+------------------+ +---------------+
-| uid              | | uid           |
-| name             | | name          |
-| preparation_time | | description   |
-| difficulty       | +---------------+
-| portions         |
-| ingredients      |
-| process          |
-| category_uid     |
-| image            |
-+------------------+
+| ----------------- | -------------- |
+| Recipe | RecipeCategory |
+| ----------------- | -------------- |
+| uid | uid |
+| name | name |
+| preparation_time | description |
+| difficulty | -------------- |
+| portions |
+| ingredients |
+| process |
+| category_uid |
+| image |
+| ----------------- |
 
 
 ### 1.2. charakteristika funkčností aplikace
